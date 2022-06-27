@@ -331,13 +331,7 @@ ul {
   }
 }
 
-@media (max-width: 1001px) {
-  .burger::after {
-    height: 120px;
-  }
-  .burger__inner {
-    margin: 0 68px;
-  }
+@media (max-width: 1420px) {
   .header__menu {
     padding: 170px 93px 116px;
   }
@@ -345,8 +339,14 @@ ul {
     width: 452.25px;
     height: 170px;
   }
-  .header__menu::-webkit-scrollbar {
-    width: 0;
+}
+
+@media (max-width: 1001px) {
+  .burger::after {
+    height: 120px;
+  }
+  .burger__inner {
+    margin: 0 68px;
   }
 }
 

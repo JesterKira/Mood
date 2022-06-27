@@ -281,6 +281,16 @@ ul {
         margin: 0 310px;
     }
 }
+@media (max-width: 1420px) {
+    .header__menu {
+        padding: 170px 93px 116px;
+
+        &::before {
+            width: 452.25px;
+            height: 170px;
+        }
+    }
+}
 @media (max-width: 1001px) {
     .burger {
         &::after {
@@ -289,18 +299,6 @@ ul {
     }
     .burger__inner {
         margin: 0 68px;
-    }
-    .header__menu {
-        padding: 170px 93px 116px;
-
-        &::before {
-            width: 452.25px;
-            height: 170px;
-        }
-
-        &::-webkit-scrollbar {
-            width: 0;
-        }
     }
 }
 @media (max-width: 700px) {

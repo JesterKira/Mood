@@ -7,8 +7,8 @@ const Body = document.querySelector('body');
 const Page = document.querySelector('.page');
 const LockPaddingValue = window.innerWidth - Page.offsetWidth + "px";
 
+
 MenuList.style.paddingRight = MenuList.offsetWidth - MenuList.clientWidth + "px";
-console.log(HeaderNavigation.offsetWidth);
 
 Burger.addEventListener('click', function() {
     Burger.classList.toggle('active');
@@ -16,7 +16,7 @@ Burger.addEventListener('click', function() {
     MenuLogo.classList.toggle('active');
     Overlay.classList.toggle('active');
     Body.classList.toggle('lock');
-    document.querySelector('.page').classList.toggle('lock');
+    Page.classList.toggle('lockPadding');
     PaddingLock(Page);
 });
 
@@ -30,7 +30,7 @@ Overlay.addEventListener('click', function() {
 })
 
 function PaddingLock (current) {
-    if (current.classList.contains('lock')) {
+    if (current.classList.contains('lockPadding')) {
         current.style.paddingRight = LockPaddingValue;
     }
     else {
