@@ -65,6 +65,8 @@ ul {
     position: relative;
     margin-top: $header__margin-top;
     min-height: 90px;
+    background-color: #FFF7F6;
+    z-index: 5;
 
     &::before, &::after {
         content: "";
@@ -86,7 +88,6 @@ ul {
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #FFF7F6;
     }
     &.fixed::before {
         display: none;
@@ -414,3 +415,53 @@ ul {
     }
 }
 .button {}
+
+.main__intro {}
+.intro {}
+.intro__container {
+    display: flex;
+    transform: translate(220px, 0);
+}
+
+.intro__content {
+    flex: 0 1 43%;
+    padding-top: 70px;
+}
+.intro__title {
+    display: flex;
+    gap: 20px;
+}
+.intro-title {
+    font-family: 'Handjet';
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 0.9;
+    align-items: flex-end;
+}
+.intro-title__year {
+    font-size: 140px;
+    line-height: 0.8;
+
+    span {
+        color: #2CF470;
+    }
+}
+.intro__text {
+    display: flex;
+    flex-direction: column;
+}
+.text-1 {
+    max-width: 320px;
+}
+.text-1__title {
+    font-family: 'Almarai';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.text-2 {}
+.text-2__link {}
+
+.intro__image {}
+.image-intro {}
+.image-intro__photo {}

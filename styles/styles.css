@@ -70,6 +70,8 @@ ul {
   position: relative;
   margin-top: 30px;
   min-height: 90px;
+  background-color: #FFF7F6;
+  z-index: 5;
 }
 
 .header::before, .header::after {
@@ -94,7 +96,6 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #FFF7F6;
 }
 
 .header.fixed::before {
@@ -460,5 +461,67 @@ ul {
 .main__button:hover {
   background-color: #271e1d00;
   color: #271E1D;
+}
+
+.intro__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(220px, 0);
+          transform: translate(220px, 0);
+}
+
+.intro__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 43%;
+          flex: 0 1 43%;
+  padding-top: 70px;
+}
+
+.intro__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.intro-title {
+  font-family: 'Handjet';
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 0.9;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.intro-title__year {
+  font-size: 140px;
+  line-height: 0.8;
+}
+
+.intro-title__year span {
+  color: #2CF470;
+}
+
+.intro__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.text-1 {
+  max-width: 320px;
+}
+
+.text-1__title {
+  font-family: 'Almarai';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
 }
 /*# sourceMappingURL=styles.css.map */
