@@ -386,3 +386,31 @@ ul {
         }
     }
 }
+
+/* ========== MAIN ========== */
+.main {}
+
+.main__button__container {
+    padding: 0 45px;
+}
+.main__button {
+    position: fixed;
+    top: 45%;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    border: 2px solid #271E1D;
+    color: #FFEEEE;
+    background-color: #271E1D;
+    cursor: pointer;
+    font-family: "Almarai";
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.5;
+
+    &:hover {
+        background-color: #271e1d00;
+        color: #271E1D;
+    }
+}
+.button {}
