@@ -10,7 +10,6 @@ window.onscroll = function fixHeader() {
         else {
             Header.classList.remove('fixed');
             Main.style.paddingTop = 0;
-
         }
     }
     else {

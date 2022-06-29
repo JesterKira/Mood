@@ -122,6 +122,7 @@ ul {
 .burger::before, .burger::after {
   content: "";
   position: absolute;
+  height: 120px;
   width: 1px;
   background-color: #E7C9C8;
   top: -65px;
@@ -129,12 +130,10 @@ ul {
 
 .burger::before {
   left: 0;
-  height: 1000vh;
 }
 
 .burger::after {
   right: 0;
-  height: 1000vh;
 }
 
 .burger__inner {
@@ -301,8 +300,8 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
   min-width: 360px;
+  width: 100%;
   height: 100%;
   z-index: -1;
 }
@@ -310,7 +309,7 @@ ul {
 .overlay.active {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  z-index: 1;
+  z-index: 2;
 }
 
 .header__contact {
@@ -326,18 +325,17 @@ ul {
   content: "";
   position: absolute;
   width: 1px;
+  height: 120px;
   background-color: #E7C9C8;
   top: -65px;
 }
 
 .header__contact::before {
   left: 0;
-  height: 120px;
 }
 
 .header__contact::after {
   right: 0;
-  height: 1000vh;
 }
 
 @media (min-width: 1921px) {
@@ -359,9 +357,6 @@ ul {
 }
 
 @media (max-width: 1001px) {
-  .burger::after {
-    height: 120px;
-  }
   .burger__inner {
     margin: 0 68px;
   }
@@ -388,12 +383,19 @@ ul {
     min-height: 70px;
     margin-top: 20px;
   }
-  .burger::after {
+  .burger::after, .burger::before {
     height: 110px;
   }
   .burger__inner {
     margin: 0 30px;
     width: 30px;
+  }
+  .header__contact {
+    font-size: 20px;
+    padding: 0 100px;
+  }
+  .header__contact::after {
+    height: 110px;
   }
   .header__menu {
     padding: 159px 58px 96px;
@@ -438,6 +440,13 @@ ul {
 }
 
 /* ========== MAIN ========== */
+.main__borders__container::before, .main__borders__container::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  background-color: #E7C9C8;
+}
+
 .main__button__container {
   padding: 0 45px;
 }
@@ -493,6 +502,7 @@ ul {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  margin-bottom: 65px;
 }
 
 .intro-title__year {
@@ -512,10 +522,35 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: 'Almarai';
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.intro__text a {
+  color: #EC9E9A;
+}
+
+.intro__text a:hover {
+  text-decoration: underline;
 }
 
 .text-1 {
+  position: relative;
   max-width: 320px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+
+.text-1::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  background-color: #EC9E9A;
+  top: 0;
+  left: -40px;
 }
 
 .text-1__title {
@@ -523,5 +558,93 @@ ul {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.text-2 {
+  margin: 45px 23.5% 90px;
+  max-width: 170px;
+}
+
+.text-2__link {
+  margin-top: 15px;
+}
+
+.content-intro__switches {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  height: 42px;
+  margin-right: 50px;
+  gap: 20px;
+}
+
+.content-intro__switches svg {
+  cursor: pointer;
+  z-index: 3;
+}
+
+.content-intro__switches svg:hover path {
+  stroke: #A88A86;
+}
+
+.content-intro__switches::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 40px;
+  background-color: #2CF470;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.intro-switches__previous {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.intro__border {
+  height: 1px;
+  width: 93%;
+  margin: 0 auto;
+  background-color: #E7C9C8;
+}
+
+.intro__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 57%;
+          flex: 0 1 57%;
+}
+
+.image-intro__photo {
+  position: relative;
+  max-width: 750px;
+}
+
+.image-intro__photo::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, 17%);
+          transform: translate(-50%, 17%);
+  background: url(../images/intro/decor.png);
+}
+
+.image-intro__photo img {
+  border-radius: 0px 0px 375px 0px;
+}
+
+@media (min-width: 1921px) {
+  .main__button__container {
+    max-width: none;
+    margin: 0 310px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

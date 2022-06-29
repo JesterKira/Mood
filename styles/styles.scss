@@ -107,17 +107,16 @@ ul {
     &::before, &::after {
         content: "";
         position: absolute;
+        height: 90px + $header__margin-top;
         width: 1px;
         background-color: #E7C9C8;
         top: -65px;
     }
     &::before {
         left: 0;
-        height: 1000vh;
     }
     &::after {
         right: 0;
-        height: 1000vh;
     }
 }
 .burger__inner {
@@ -251,14 +250,14 @@ ul {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     min-width: 360px;
+    width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1;    
 
     &.active {
         backdrop-filter: blur(10px);
-        z-index: 1;
+        z-index: 2;
     }
 }
 
@@ -276,16 +275,15 @@ ul {
         content: "";
         position: absolute;
         width: 1px;
+        height: 90px + $header__margin-top;
         background-color: #E7C9C8;
         top: -65px;
     }
     &::before {
         left: 0;
-        height: 120px;
     }
     &::after {
         right: 0;
-        height: 1000vh;
     }
 }
 
@@ -307,11 +305,6 @@ ul {
     }
 }
 @media (max-width: 1001px) {
-    .burger {
-        &::after {
-            height: 120px;
-        }
-    }
     .burger__inner {
         margin: 0 68px;
     }
@@ -338,13 +331,21 @@ ul {
         margin-top: 20px;
     }
     .burger {
-        &::after {
+        &::after, &::before {
             height: 110px;
         }
     }
     .burger__inner {
         margin: 0 30px;
         width: 30px;
+    }
+    .header__contact {
+        font-size: 20px;
+        padding: 0 100px;
+
+        &::after {
+            height: 110px;
+        }
     }
     .header__menu {
         padding: 159px 58px 96px;
@@ -390,6 +391,14 @@ ul {
 
 /* ========== MAIN ========== */
 .main {}
+.main__borders__container {
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        background-color: #E7C9C8;
+    }
+}
 
 .main__button__container {
     padding: 0 45px;
@@ -437,6 +446,7 @@ ul {
     font-size: 100px;
     line-height: 0.9;
     align-items: flex-end;
+    margin-bottom: 65px;
 }
 .intro-title__year {
     font-size: 140px;
@@ -449,19 +459,118 @@ ul {
 .intro__text {
     display: flex;
     flex-direction: column;
+    font-family: 'Almarai';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+
+    a {
+        color: #EC9E9A;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 .text-1 {
+    position: relative;
     max-width: 320px;
+    margin-left: auto;
+    margin-bottom: 15px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        background-color: #EC9E9A;
+        top: 0;
+        left: -40px;
+    }
 }
 .text-1__title {
     font-family: 'Almarai';
     font-weight: 700;
     font-size: 20px;
     line-height: 1.5;
+    text-transform: uppercase;
 }
-.text-2 {}
-.text-2__link {}
+.text-2 {
+    margin: 45px 23.5% 90px;
+    max-width: 170px;
+}
+.text-2__link {
+    margin-top: 15px;
+}
 
-.intro__image {}
+.content-intro__switches {
+    display: flex;
+    justify-content: end;
+    height: 42px;
+    margin-right: 50px;
+    gap: 20px;
+
+    svg {
+        cursor: pointer;
+        z-index: 3;
+
+        &:hover {
+            path {
+                stroke: #A88A86;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 40px;
+        background-color: #2CF470;
+        transform: translateY(50%);
+    }
+}
+.intro-switches__previous {
+    align-self: flex-end;
+}
+.intro-switches__next {
+
+}
+
+.intro__border {
+    height: 1px;
+    width: 93%;
+    margin: 0 auto;
+    background-color: #E7C9C8;
+}
+
+.intro__image {
+    flex: 0 1 57%;
+}
 .image-intro {}
-.image-intro__photo {}
+.image-intro__photo {
+    position: relative;
+    max-width: 750px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 17%);
+        background: url(../images/intro/decor.png);
+    }
+
+    img {
+        border-radius: 0px 0px 375px 0px;
+    }
+}
+@media (min-width: 1921px) {
+    .main__button__container {
+        max-width: none;
+        margin: 0 310px;
+    }
+}
