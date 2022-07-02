@@ -431,6 +431,8 @@ ul {
 .main__button {
     position: fixed;
     top: 45%;
+}
+.button {
     width: 145px;
     height: 145px;
     border-radius: 50%;
@@ -448,7 +450,6 @@ ul {
         color: #271E1D;
     }
 }
-.button {}
 
 .main__intro {
     margin-bottom: 500px;
@@ -465,6 +466,7 @@ ul {
 }
 .intro__title {
     display: flex;
+    align-items: flex-end;
     gap: 20px;
 }
 .intro-title {
@@ -472,7 +474,6 @@ ul {
     font-weight: 700;
     font-size: 100px;
     line-height: 0.9;
-    align-items: flex-end;
     margin-bottom: 65px;
 }
 .intro-title__year {
@@ -523,11 +524,12 @@ ul {
     text-transform: uppercase;
 }
 .text-2 {
-    margin: 45px 23.5% 90px;
+    margin: 45px 0 90px 23.5%;
     max-width: 170px;
 }
 .text-2__link {
-    margin-top: 15px;
+    font-size: 17px;
+    margin-top: 10px;
 }
 
 .content-intro__switches {
@@ -587,7 +589,8 @@ ul {
         height: 300px;
         bottom: 0;
         left: 0;
-        transform: translate(-50%, 17%);
+        border-radius: 0px 0px 0px 100px;
+        transform: translate(-47%, 17%);
         background: url(../images/intro/decor.png);
     }
 
@@ -595,12 +598,131 @@ ul {
         border-radius: 0px 0px 375px 0px;
     }
 }
+.image__button {
+    display: none;
+}
 @media (min-width: 1921px) {
     .main__button__container, .border__container {
         max-width: none;
         margin: 0 310px;
     }
 }
-@media (min-width: 1340px) {
+@media (max-width: 1340px) {
+    .left__borders {
+        &::after {
+            display: none;
+        }
+    }
+    .main__button__container {
+        display: none;
+    }
+    .intro__container {
+        transform: translate(0, 0);
+    }
+    .intro__content {
+        flex: 0 1 52.5%;
+        padding-top: 50px;
+    }
+    .intro__title {
+        justify-content: center;
+        gap: 10px;
+    }
+    .intro-title {
+        font-size: 80px;
+        line-height: 0.9;
+        margin-bottom: 15px;
+    }
+    .intro-title__year {
+        font-size: 100px;
+        line-height: 0.85;
+    }
+    .intro__text {
+        font-size: 20px;
+        line-height: 1.5;
     
+        a {
+            color: #EC9E9A;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .text-1 {
+        position: relative;
+        max-width: 440px;
+        margin-left: 40px;
+        margin-bottom: 15px;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background-color: #EC9E9A;
+            top: 0;
+            left: -40px;
+        }
+    }
+    .text-2 {
+        margin: 45px 0 70px 40%;
+        max-width: 170px;
+    }
+    .content-intro__switches {
+        margin-right: -20px;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            left: 60px;
+            width: 20px;
+            height: 40px;
+            background-color: #2CF470;
+            transform: translateY(-50%);
+        }
+    }
+    .intro__border {
+        width: 100%;
+    }
+
+    .intro__image {
+        flex: 0 1 47.5%;
+    }
+    .image-intro__photo {
+        margin-right: -40px;
+
+        &::after {
+            width: 100%;
+            min-width: 140px;
+            height: 210px;
+            left: 35%;
+            background: url(../images/intro/decor_2.png) no-repeat;
+        }
+
+        img {
+            width: 100%;
+            min-width: 520px;
+            border-radius: 0px 0px 259.5px 0px;
+        }
+    }
+    .image__button {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 35%;
+        transform: translate(0, 45%);
+        z-index: 2;
+    }
+}
+@media (max-width: 1001px) {
+    .image-intro__photo {
+
+        &::after {
+            height: 210px;
+        }
+
+        img {
+            height: 550px;
+        }
+    } 
 }
