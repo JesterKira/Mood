@@ -47,7 +47,6 @@ a {
 
 main {
     flex: 1 1 auto;
-    height: 2000px;
 }
 
 [class*="__container"] {
@@ -390,13 +389,39 @@ ul {
 }
 
 /* ========== MAIN ========== */
-.main {}
-.main__borders__container {
+.main {
+    position: relative;
+}
+
+.border__container {
+    display: flex;
+    justify-content: space-between;
+}
+.left__borders {
     &::before, &::after {
         content: "";
         position: absolute;
         width: 1px;
+        height: 100%;
         background-color: #E7C9C8;
+    }
+    &::after {
+        margin-left: 199.5px;
+    }
+}
+.right__border {
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: #E7C9C8;
+    }
+    &::before {
+        width: 0;
+    }
+    &::after {
+        margin-left: -1px;
     }
 }
 
@@ -425,7 +450,9 @@ ul {
 }
 .button {}
 
-.main__intro {}
+.main__intro {
+    margin-bottom: 500px;
+}
 .intro {}
 .intro__container {
     display: flex;
@@ -524,7 +551,7 @@ ul {
     &::before {
         content: "";
         position: absolute;
-        left: 0;
+        left: 20px;
         width: 20px;
         height: 40px;
         background-color: #2CF470;
@@ -569,8 +596,11 @@ ul {
     }
 }
 @media (min-width: 1921px) {
-    .main__button__container {
+    .main__button__container, .border__container {
         max-width: none;
         margin: 0 310px;
     }
+}
+@media (min-width: 1340px) {
+    
 }

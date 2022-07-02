@@ -52,7 +52,6 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  height: 2000px;
 }
 
 [class*="__container"] {
@@ -440,11 +439,45 @@ ul {
 }
 
 /* ========== MAIN ========== */
-.main__borders__container::before, .main__borders__container::after {
+.main {
+  position: relative;
+}
+
+.border__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.left__borders::before, .left__borders::after {
   content: "";
   position: absolute;
   width: 1px;
+  height: 100%;
   background-color: #E7C9C8;
+}
+
+.left__borders::after {
+  margin-left: 199.5px;
+}
+
+.right__border::before, .right__border::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #E7C9C8;
+}
+
+.right__border::before {
+  width: 0;
+}
+
+.right__border::after {
+  margin-left: -1px;
 }
 
 .main__button__container {
@@ -470,6 +503,10 @@ ul {
 .main__button:hover {
   background-color: #271e1d00;
   color: #271E1D;
+}
+
+.main__intro {
+  margin-bottom: 500px;
 }
 
 .intro__container {
@@ -594,7 +631,7 @@ ul {
 .content-intro__switches::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 20px;
   width: 20px;
   height: 40px;
   background-color: #2CF470;
@@ -642,7 +679,7 @@ ul {
 }
 
 @media (min-width: 1921px) {
-  .main__button__container {
+  .main__button__container, .border__container {
     max-width: none;
     margin: 0 310px;
   }
