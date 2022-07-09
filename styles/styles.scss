@@ -756,11 +756,79 @@ ul {
         right: -145px;
     }
 }
+@media (max-width: 628px) {
+    .intro__content {
+        flex: 0 1 95%;
+        padding-top: 25px;
+    }
+    .intro-title {
+        flex-direction: column;
+        gap: 170px;
+        width: 100%;
+        margin-bottom: 150px;
+    }
+    .intro-title__year {
+        align-self: flex-start;
+    }
+    .intro__text {
+        max-width: 350px;
+    }
+    .intro__border {
+        margin-left: -20px;
+    }
+    .text-2 {
+        margin: 10px 0 0 40px;
+    }
+    .content-intro__switches {
+        position: absolute;
+        bottom: 220px;
+        right: 50px;
+        margin-right: 0;
+
+        &::before {
+            display: none;
+        }
+    }
 
 
+    .intro__image {
+        flex: 0 1 5%;
+    }
+    .image-intro__photo {
+        right: -30px;
 
-
-
-@media (max-width: 768px) {
-    
+        &::after {
+            background: url(../images/intro/decor.png) no-repeat;
+            width: 200px;
+            height: 300px;
+            left: 5px;
+            bottom: -30px;
+        }
+    }
+    .image-intro__photo img {
+        border-radius: 0px 0px 200px 0px;
+        min-width: 400px;
+        // height: 420px;
+    }
+    .image__button {
+        bottom: -250px;
+        left: 300px;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 595px) {
+    .intro-title {
+        gap: 130px;
+    }
+    .content-intro__switches {
+        position: absolute;
+        bottom: 230px;
+    }
+    .image-intro__photo img {
+        height: 500px;
+    }
+    .image__button {
+        bottom: -260px;
+        left: 252px;
+    }
 }
